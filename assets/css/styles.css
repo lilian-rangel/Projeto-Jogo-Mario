@@ -18,8 +18,12 @@
 .pipe {
     position: absolute;
     bottom: 0;
+    right: -80px;
     width: 80px;
-    /* animation: pipe-animation 1.5s infinite linear; */
+}
+
+.pipe.play {
+    animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
@@ -32,10 +36,45 @@
     animation: jump 500ms ease-out;
 }
 
+.death {
+    animation: death 1500ms ease-out;
+}
+
 .clouds {
     position: absolute;
     width: 550px;
-    /* animation: clouds-animation 20s infinite linear; */
+    right: -550px;
+}
+
+.clouds.play {
+    animation: clouds-animation 20s infinite linear;
+}
+
+.actions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions_btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #F6406E;
+    color: #FFF;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 2.4em;
+    text-transform: uppercase;
+}
+
+.actions_btn:active {
+    transform: scale(0.9);
 }
 
 @keyframes pipe-animation {
@@ -68,6 +107,32 @@
 
     100% {
         bottom: 0;
+    }
+}
+
+@keyframes death {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 0;
+    }
+
+    65% {
+        bottom: 150px;
+    }
+
+    75% {
+        bottom: 180px;
+    }
+
+    85% {
+        bottom: 150px;
+    }
+
+    100% {
+        bottom: -120px;
     }
 }
 
