@@ -1,14 +1,22 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
+const audio = document.querySelector(".audio");
 
+const themeSfx = () => new Audio("assets/sfx/super_mario_world_overworld_theme.mp3");
+const jumpSfx = () => new Audio("assets/sfx/super_mario_world_jump_sound_effect.mp3");
+const deathSfx = () => new Audio("assets/sfx/super_mario_world_death.mp3");
 
 const jump = () => {
     mario.classList.add("jump");
+    mario.src = "./assets/img/jump.png";
 
     setTimeout(() => {
         mario.classList.remove("jump");
+        mario.src = "./assets/img/mario.gif";
     }, 500);
+
+    jumpSfx().play();
 }
 
 const loop = setInterval(() => {
@@ -32,6 +40,8 @@ const loop = setInterval(() => {
         clouds.style.animation = "none";
         clouds.style.left = `${cloudsPosition}px`;
 
+        deathSfx().play();
+
         clearInterval(loop);
 
     }
@@ -39,3 +49,4 @@ const loop = setInterval(() => {
 }, 10);
 
 document.addEventListener("keydown", jump);
+playAudio();
