@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -36,8 +36,9 @@
     animation: jump 500ms ease-out;
 }
 
-.death {
-    animation: death 1500ms ease-out;
+.dead {
+    transition: bottom 0.5s ease 0.5s;
+    bottom: -120px !important;
 }
 
 .clouds {
@@ -85,7 +86,7 @@
     to {
         right: 100%;
     }
-    
+
 }
 
 @keyframes jump {
@@ -110,32 +111,6 @@
     }
 }
 
-@keyframes death {
-    0% {
-        bottom: 0;
-    }
-
-    50% {
-        bottom: 0;
-    }
-
-    65% {
-        bottom: 150px;
-    }
-
-    75% {
-        bottom: 180px;
-    }
-
-    85% {
-        bottom: 150px;
-    }
-
-    100% {
-        bottom: -120px;
-    }
-}
-
 @keyframes clouds-animation {
     from {
         right: -550px;
@@ -144,5 +119,5 @@
     to {
         right: 100%;
     }
-    
+
 }

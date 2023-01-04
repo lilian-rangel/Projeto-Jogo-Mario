@@ -47,6 +47,8 @@ const loop = setInterval(() => {
         mario.style.width = "70px";
         mario.style.marginLeft = "50px";
 
+        // mario.classList.add("dead");
+
         clouds.style.left = `${cloudsPos}px`;
 
         themeSfx.pause();
