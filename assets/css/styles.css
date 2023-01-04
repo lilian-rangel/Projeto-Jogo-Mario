@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -18,7 +18,11 @@
 .pipe {
     position: absolute;
     bottom: 0;
+    right: -80px;
     width: 80px;
+}
+
+.pipe.play {
     animation: pipe-animation 1.5s infinite linear;
 }
 
@@ -32,10 +36,46 @@
     animation: jump 500ms ease-out;
 }
 
+.dead {
+    transition: bottom 0.5s ease 0.5s;
+    bottom: -120px !important;
+}
+
 .clouds {
     position: absolute;
     width: 550px;
+    right: -550px;
+}
+
+.clouds.play {
     animation: clouds-animation 20s infinite linear;
+}
+
+.actions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions_btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #F6406E;
+    color: #FFF;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 2.4em;
+    text-transform: uppercase;
+}
+
+.actions_btn:active {
+    transform: scale(0.9);
 }
 
 @keyframes pipe-animation {
@@ -46,7 +86,7 @@
     to {
         right: 100%;
     }
-    
+
 }
 
 @keyframes jump {
@@ -79,5 +119,5 @@
     to {
         right: 100%;
     }
-    
+
 }
